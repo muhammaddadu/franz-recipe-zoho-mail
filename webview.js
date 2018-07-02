@@ -1,12 +1,25 @@
 const path = require('path');
 
-module.exports = (Franz) => {
-	const getMessages = function getMessages() {
+class ZohoMailRecipe {
+	constructor(Franz) {
+		this.Franz = Franz;
+
+		this.inject();
+		this.monitor();
+	}
+
+	inject() {
+		this.Franz.injectCSS(path.join(__dirname, 'service.css'));
+	}
+
+	monitor() {
+		this.Franz.loop(() => this.updateMessegeCount());
+	}
+
+	updateMessegeCount() {
 		const element = $('#zm_unread');
 
-		if (!element) {
-			return;
-		}
+		if (!element) { return; }
 
 		const title = element.attr('title');
 
@@ -18,12 +31,8 @@ module.exports = (Franz) => {
 		}
 
 		// set Franz badge
-		Franz.setBadge(count);
+		this.Franz.setBadge(count);
 	};
+}
 
-	// inject franz.css stylesheet
-	Franz.injectCSS(path.join(__dirname, 'service.css'));
-
-	// check for new messages every second and update Franz badge
-	Franz.loop(getMessages);
-};
+module.exports = (Franz) => new ZohoMailRecipe(Franz);
