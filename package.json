@@ -1,0 +1,13 @@
+{
+  "id": "zoho-mail",
+  "name": "zoho-mail",
+  "version": "1.0.4",
+  "description": "zoho mail recipe for franz",
+  "main": "index.js",
+  "author": "M <muhammad@dadu.co>",
+  "license": "MIT",
+  "config": {
+    "serviceURL": "https://accounts.zoho.eu/signin?servicename=VirtualOffice&signupurl=https://workplace.zoho.eu/orgsignup.do",
+    "hasNotificationSound": true
+  }
+}
