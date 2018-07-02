@@ -1,5 +1,5 @@
-# Zoho Mail for Franz
-In integration with Zoho Mail for Franz
+# Zoho Mail Recipe for Franz
+Integrated Zoho Mail with Franz
 
 ![](./screenshot.png)
 
