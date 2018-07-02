@@ -1,5 +1,7 @@
 const path = require('path');
 
+const SERVICE_CSS_PATH = path.join(__dirname, 'service.css');
+
 class ZohoMailRecipe {
 	constructor(Franz) {
 		this.Franz = Franz;
@@ -9,7 +11,7 @@ class ZohoMailRecipe {
 	}
 
 	inject() {
-		this.Franz.injectCSS(path.join(__dirname, 'service.css'));
+		this.Franz.injectCSS(SERVICE_CSS_PATH);
 	}
 
 	monitor() {
@@ -22,7 +24,6 @@ class ZohoMailRecipe {
 		if (!element) { return; }
 
 		const title = element.attr('title');
-
 		let count = 0;
 
 		if (title.split(' (').length === 2) {
