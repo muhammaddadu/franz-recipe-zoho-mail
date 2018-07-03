@@ -1,7 +1,7 @@
 {
   "id": "zoho-mail",
   "name": "zoho-mail",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "zoho mail recipe for franz",
   "main": "index.js",
   "author": "M <muhammad@dadu.co>",
